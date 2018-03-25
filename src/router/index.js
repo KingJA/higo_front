@@ -5,6 +5,8 @@ import IncomeDetail from '@/components/IncomeDetail'
 import CashDetail from '@/components/CashDetail'
 import GeneralizeLink from '@/components/GeneralizeLink'
 import GoCash from '@/components/GoCash'
+import SelledProduct from '@/components/SelledProduct'
+import InvitedMebber from '@/components/InvitedMebber'
 
 Vue.use(Router)
 
@@ -34,6 +36,16 @@ export default new Router({
       path: '/goCash',
       name: 'GoCash',
       component: GoCash
+    },
+    {
+      path: '/selledProduct',
+      name: 'SelledProduct',
+      component: SelledProduct
+    },
+    {
+      path: '/invitedMebber',
+      name: 'InvitedMebber',
+      component: InvitedMebber
     },
   ]
 })

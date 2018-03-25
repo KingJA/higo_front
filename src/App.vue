@@ -13,7 +13,6 @@ export default {
 <style>
 #app {
   text-align: center;
-  background:#bebebe;
   height: 100%;
 
 }
