@@ -14,38 +14,32 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Main',
-      component: Main
+      component: Main,
+      children:[{
+        path: '/selledProduct',
+        component: SelledProduct
+      },
+        {
+          path: '/invitedMebber',
+          component: InvitedMebber
+        }]
+
     },
     {
       path: '/incomeDetail',
-      name: 'IncomeDetail',
       component: IncomeDetail
     },
     {
       path: '/cashDetail',
-      name: 'CashDetail',
       component: CashDetail
     },
     {
       path: '/generalizeLink',
-      name: 'GeneralizeLink',
       component: GeneralizeLink
     },
     {
       path: '/goCash',
-      name: 'GoCash',
       component: GoCash
-    },
-    {
-      path: '/selledProduct',
-      name: 'SelledProduct',
-      component: SelledProduct
-    },
-    {
-      path: '/invitedMebber',
-      name: 'InvitedMebber',
-      component: InvitedMebber
-    },
+    }
   ]
 })

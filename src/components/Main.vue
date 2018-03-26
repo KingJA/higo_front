@@ -26,17 +26,17 @@
     </div>
 
 
-    <div class="tabs">
+    <div class="navs">
 
-      <ul class="tab_line">
-        <li class="tab_item">
+      <ul class="nav_line">
+        <li class="nav_item">
           <div>
             <img class="tab_icon" src="../assets/head.jpg" width="40" height="40"/>
             <p><a href="#/incomeDetail" class="tab_text">收益明细</a><br></p>
           </div>
 
         </li>
-        <li class="tab_item">
+        <li class="nav_item">
           <div>
             <img class="tab_icon" src="../assets/head.jpg" width="40" height="40"/>
             <p><a href="#/incomeDetail" class="tab_text">推广链接</a><br></p>
@@ -44,15 +44,15 @@
 
         </li>
       </ul>
-      <ul class="tab_line">
-        <li class="tab_item">
+      <ul class="nav_line">
+        <li class="nav_item">
           <div>
             <img class="tab_icon" src="../assets/head.jpg" width="40" height="40"/>
             <p><a href="#/incomeDetail" class="tab_text">提现记录</a><br></p>
           </div>
 
         </li>
-        <li class="tab_item">
+        <li class="nav_item">
           <div>
             <img class="tab_icon" src="../assets/head.jpg" width="40" height="40"/>
             <p><a href="#/incomeDetail" class="tab_text">我要提现</a><br></p>
@@ -99,7 +99,7 @@
       .id
         margin-top 10px
 
-    .tabs
+    .navs
       position absolute
       top 40%
       left 5%
@@ -110,9 +110,9 @@
       .item
         display inline-block
 
-      .tab_line
+      .nav_line
         display flex
-        .tab_item
+        .nav_item
           padding-top 40px
           padding-bottom 20px
           flex 1
