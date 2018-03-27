@@ -2,11 +2,11 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Main from '@/components/Main'
 import IncomeDetail from '@/components/IncomeDetail'
-import CashDetail from '@/components/CashDetail'
-import GeneralizeLink from '@/components/GeneralizeLink'
-import GoCash from '@/components/GoCash'
+import CashDetail from '@/components/CashDetail/CashDetail'
+import GeneralizeLink from '@/components/GeneralizeLink/GeneralizeLink'
+import GoCash from '@/components/GoCash/GoCash'
 import SelledProduct from '@/components/SelledProduct'
-import InvitedMebber from '@/components/InvitedMebber'
+import InvitedMebber from '@/components/InvitedMember/InvitedMember'
 
 Vue.use(Router)
 
@@ -14,8 +14,13 @@ export default new Router({
   routes: [
     {
       path: '/',
-      component: Main,
-      children:[{
+      component: Main
+    },
+    {
+      path: '/incomeDetail',
+      component: IncomeDetail,
+      redirect: '/selledProduct',
+      children: [{
         path: '/selledProduct',
         component: SelledProduct
       },
@@ -24,10 +29,6 @@ export default new Router({
           component: InvitedMebber
         }]
 
-    },
-    {
-      path: '/incomeDetail',
-      component: IncomeDetail
     },
     {
       path: '/cashDetail',

@@ -6,65 +6,48 @@
       </div>
       <p class="name">达芬奇</p>
       <p class="id">ID:12345</p>
-
       <div class="money">
-
         <div class="money_item">
           <h1 class="money_num">128800</h1>
           <p class="money_text">我的收益</p>
-
         </div>
-
         <div class="money_item">
           <h1 class="money_num">128800</h1>
           <p class="money_text">我的收益</p>
-
         </div>
-
       </div>
 
     </div>
-
-
     <div class="navs">
-
       <ul class="nav_line">
-        <li class="nav_item">
+        <li class="nav_item" @click="goPath(paths[0])">
           <div>
             <img class="tab_icon" src="../assets/head.jpg" width="40" height="40"/>
-            <p><a href="#/incomeDetail" class="tab_text">收益明细</a><br></p>
+            <p class="tab_text">收益明细</p>
           </div>
-
         </li>
-        <li class="nav_item">
+        <li class="nav_item" @click="goPath(paths[1])">
           <div>
             <img class="tab_icon" src="../assets/head.jpg" width="40" height="40"/>
-            <p><a href="#/incomeDetail" class="tab_text">推广链接</a><br></p>
+            <p class="tab_text">推广链接</p>
           </div>
-
         </li>
       </ul>
       <ul class="nav_line">
-        <li class="nav_item">
+        <li class="nav_item" @click="goPath(paths[2])">
           <div>
             <img class="tab_icon" src="../assets/head.jpg" width="40" height="40"/>
-            <p><a href="#/incomeDetail" class="tab_text">提现记录</a><br></p>
+            <p class="tab_text">提现记录</p>
           </div>
 
         </li>
-        <li class="nav_item">
+        <li class="nav_item" @click="goPath(paths[3])">
           <div>
             <img class="tab_icon" src="../assets/head.jpg" width="40" height="40"/>
-            <p><a href="#/incomeDetail" class="tab_text">我要提现</a><br></p>
+            <p class="tab_text">我要提现</p>
           </div>
-
         </li>
       </ul>
-
-      <!--<a href="#/generalizeLink">推广链接</a><br>-->
-      <!--<a href="#/cashDetail">提现记录</a><br>-->
-      <!--<a href="#/goCash">我要提现</a><br>-->
-
     </div>
 
   </div>
@@ -73,9 +56,16 @@
 <script>
   export default {
     name: 'HelloWorld',
+    methods: {
+      goPath(path) {
+        this.$router.push(path)
+      }
+
+    },
     data() {
       return {
-        msg: 'Welcome to Your Vue.js App'
+        msg: 'Welcome to Your Vue.js App',
+        paths: ['/incomeDetail', '/generalizeLink', '/cashDetail', '/goCash',]
       }
     }
   }
@@ -84,6 +74,7 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="stylus" rel="stylesheet/stylus">
   .main
+    text-align: center;
     background #ECEDF1
     height 100%
     .head
