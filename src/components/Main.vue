@@ -1,9 +1,7 @@
 <template>
   <div class="main">
     <div class="head">
-      <div>
-        <img class="wrap_icon" src="../assets/head.jpg" width="100" height="100"/>
-      </div>
+        <img class="wrap_icon" src="../assets/head.jpg"/>
       <p class="name">达芬奇</p>
       <p class="id">ID:12345</p>
       <div class="money">
@@ -21,29 +19,29 @@
     <div class="navs">
       <ul class="nav_line">
         <li class="nav_item" @click="goPath(paths[0])">
-          <div>
-            <img class="tab_icon" src="../assets/head.jpg" width="40" height="40"/>
+          <div class="wrap_nav_item">
+            <img class="tab_icon" src="/static/img/ic_income.png" width="40" height="40"/>
             <p class="tab_text">收益明细</p>
           </div>
         </li>
         <li class="nav_item" @click="goPath(paths[1])">
-          <div>
-            <img class="tab_icon" src="../assets/head.jpg" width="40" height="40"/>
+          <div class="wrap_nav_item">
+            <img class="tab_icon" src="/static/img/ic_link.png" width="40" height="40"/>
             <p class="tab_text">推广链接</p>
           </div>
         </li>
       </ul>
       <ul class="nav_line">
         <li class="nav_item" @click="goPath(paths[2])">
-          <div>
-            <img class="tab_icon" src="../assets/head.jpg" width="40" height="40"/>
+          <div class="wrap_nav_item">
+            <img class="tab_icon" src="/static/img/ic_cash_record.png" width="40" height="40"/>
             <p class="tab_text">提现记录</p>
           </div>
 
         </li>
         <li class="nav_item" @click="goPath(paths[3])">
-          <div>
-            <img class="tab_icon" src="../assets/head.jpg" width="40" height="40"/>
+          <div class="wrap_nav_item">
+            <img class="tab_icon" src="/static/img/ic_go_cash.png" width="40" height="40"/>
             <p class="tab_text">我要提现</p>
           </div>
         </li>
@@ -73,29 +71,34 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="stylus" rel="stylesheet/stylus">
+  @import "../common/stylus/function.styl"
   .main
+    position relative
     text-align: center;
     background #ECEDF1
     height 100%
     .head
-      position relative
-      height 45%
+      height px2rem(250)
       background #F9601A
       color: #fff
       .wrap_icon
-        margin-top 20px
-        border-radius 100px
+        margin-top px2rem(12)
+        border-radius px2rem(70)
         border 2px solid #FAB088
+        width px2rem(70)
+        height px2rem(70)
       .name
       .id
-        margin-top 10px
+        font-size px2rem(14)
+        margin-top px2rem(10)
 
     .navs
+      box-sizing border-box
       position absolute
-      top 40%
-      left 5%
+      top px2rem(220)
+      left px2rem(15)
       background #ffffff
-      width 90%
+      width px2rem(345)
       margin 0 auto
       border-radius 6px
       .item
@@ -103,29 +106,33 @@
 
       .nav_line
         display flex
+        height px2rem(125)
         .nav_item
-          padding-top 40px
-          padding-bottom 20px
-          flex 1
           text-align center
-          display inline-block
+          flex 1
           border-right: 1px solid rgba(7, 17, 27, 0.1);
           border-bottom: 1px solid rgba(7, 17, 27, 0.1);
-          p
-            margin-top 10px
-            .tab_text
-              color #000
-
+          .tab_text
+            margin-top px2rem(12)
+            color #333333
+            font-size px2rem(14)
+          .tab_icon
+            width px2rem(37)
+            height px2rem(37)
+          .wrap_nav_item
+            position relative
+            top 50%
+            transform translateY(-50%)
     .money
-      margin-top 10px
+      margin-top px2rem(20)
       display flex
       text-align center
       .money_item
         flex 1
         .money_num
-          font-size 30px
+          font-size px2rem(24)
         .money_text
-          margin-top 8px
-          font-size 14px
+          margin-top px2rem(7)
+          font-size px2rem(14)
 
 </style>

@@ -6,7 +6,7 @@
           <div class="head_selled_product  border-1px">
             <span class="name">{{item.name}}</span>
             <span class="phone">{{item.phone}}</span>
-            <span class="date float_rifht">{{item.date}}</span>
+            <span class="date">{{item.date}}</span>
           </div>
           <div class="content_selled_product">
             <h3 class="title">{{item.title}}</h3>
@@ -59,16 +59,34 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="stylus" rel="stylesheet/stylus">
   @import "../common/stylus/mixin.styl"
+  @import "../common/stylus/function.styl"
 
   .item_selled_product
     border-bottom 3px solid #bebebe
     .head_selled_product
+      position relative
       border-1px(#bebebe)
-      padding 10px
       .name
         border-right 1px solid #bebebe
         padding-right 10px
+        font-size px2rem(12)
+        color: #999999
+
+      .phone
+        font-size px2rem(12)
+        color: #999999
+      .date
+        font-size px2rem(12)
+        color: #999999
     .content_selled_product
       padding 10px
-
+      .title
+        font-size px2rem(15)
+        color: #333333
+      .orderId,.count
+        font-size px2rem(13)
+        color: #666666
+      .money
+        font-size px2rem(14)
+        color: #333333
 </style>
