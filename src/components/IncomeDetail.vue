@@ -32,7 +32,7 @@
   .tabs
     text-align: center;
     display flex
-    border-1px(#bebebe)
+    border-1px(#CCCCCC)
     .tab_item
       flex 1
       display inline-block

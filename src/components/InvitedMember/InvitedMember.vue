@@ -3,17 +3,15 @@
     <ul>
       <li class="item_invited_member" v-for="item in items">
 
-        <div class="div_name">
-          <span class="name">{{item.name}}</span>
-          <span class="phone">{{item.phone}}</span>
+        <p class="div_name">{{item.name}}{{item.phone}} </p>
+
+        <p class="date">成为会员时间:{{item.date}}</p>
+
+
+        <div class="wrap_income">
+          <span class="float_left">收益:  ¥</span>
+          <span class="money float_left">{{item.money}}</span>
         </div>
-
-        <div>
-          <span class="date">成为会员时间:{{item.date}}</span>
-
-        </div>
-
-        <span class="money">收益:¥{{item.money}}</span>
 
       </li>
     </ul>
@@ -47,16 +45,35 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="stylus" rel="stylesheet/stylus">
-
+  @import "../../common/stylus/function.styl"
   .item_invited_member
     position relative
-    padding 10px
-    border-bottom 1px solid #bebebe
+    padding px2rem(10)
+    border-bottom px2rem(5) solid #EFEFF4
     .div_name
-      margin-bottom 10px
-    .money
+      margin-bottom px2rem(15)
+      font-size px2rem(15)
+      color #333333
+    .wrap_income
       position absolute
       top 50%
       right 20px
       transform translateY(-50%)
+    .date
+      font-size px2rem(12)
+      color #999999
+    .wrap_income
+      span
+        line-height px2rem(14)
+        color #353535
+        display block
+        font-size px2rem(14)
+      .money
+        font-size px2rem(17)
+        font-weight bold
+
+
+
+
+
 </style>

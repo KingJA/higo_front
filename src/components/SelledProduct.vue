@@ -10,11 +10,17 @@
           </div>
           <div class="content_selled_product">
             <h3 class="title">{{item.title}}</h3>
-            <div>
-              <span class="orderId">订单号:{{item.orderId}}</span>
-              <span class="money float_rifht">返现:¥{{item.money}}</span>
+
+            <!--<div class="hidden wrap_order">-->
+              <!--<span class="orderId float_left">订单号:{{item.orderId}}</span>-->
+              <!--<span class="money float_rifht">返现:¥{{item.money}}</span>-->
+            <!--</div>-->
+            <p class="orderId">订单号:{{item.orderId}}</p>
+            <p class="count">数量:¥{{item.count}}</p>
+            <div class="wrap_income">
+              <span class="float_left">返现:  ¥</span>
+              <span class="money float_left">{{item.money}}</span>
             </div>
-            <span class="count">数量:¥{{item.count}}</span>
           </div>
 
 
@@ -62,31 +68,48 @@
   @import "../common/stylus/function.styl"
 
   .item_selled_product
-    border-bottom 3px solid #bebebe
+    border-bottom px2rem(5) solid #EFEFF4
     .head_selled_product
       position relative
-      border-1px(#bebebe)
+      overflow hidden
+      border-1px(#E9E9E9)
+      padding px2rem(10)
+      .name,.phone,.date
+        display block
+        font-size px2rem(12)
+        color  #999999
       .name
         border-right 1px solid #bebebe
-        padding-right 10px
-        font-size px2rem(12)
-        color: #999999
-
-      .phone
-        font-size px2rem(12)
-        color: #999999
+        padding-right px2rem(15)
+        line-height px2rem(13)
+        margin-right px2rem(15)
+      .name,.phone
+        float left
       .date
-        font-size px2rem(12)
-        color: #999999
+        float right
     .content_selled_product
-      padding 10px
+      position relative
+      padding px2rem(10)
       .title
         font-size px2rem(15)
         color: #333333
       .orderId,.count
         font-size px2rem(13)
         color: #666666
-      .money
-        font-size px2rem(14)
-        color: #333333
+      .orderId
+        margin-top px2rem(10)
+        margin-bottom px2rem(10)
+      .wrap_income
+        position absolute
+        top 50%
+        right 20px
+        transform translateY(-50%)
+        span
+          line-height px2rem(14)
+          color #353535
+          display block
+          font-size px2rem(14)
+        .money
+          font-size px2rem(17)
+          font-weight bold
 </style>
