@@ -66,8 +66,11 @@
 <style lang="stylus" rel="stylesheet/stylus">
   @import "../common/stylus/mixin.styl"
   @import "../common/stylus/function.styl"
-
+.selledProduct
+  background #EFEFF4
+  height 100%
   .item_selled_product
+    background #ffffff
     border-bottom px2rem(5) solid #EFEFF4
     .head_selled_product
       position relative

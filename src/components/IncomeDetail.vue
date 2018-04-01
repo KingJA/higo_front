@@ -29,6 +29,8 @@
 <style lang="stylus" rel="stylesheet/stylus">
   @import "../common/stylus/mixin.styl"
   @import "../common/stylus/function.styl"
+.income
+  height 100%
   .tabs
     text-align: center;
     display flex

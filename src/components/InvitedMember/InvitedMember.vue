@@ -46,10 +46,14 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="stylus" rel="stylesheet/stylus">
   @import "../../common/stylus/function.styl"
+.invitedMember
+  background #EFEFF4
+  height 100%
   .item_invited_member
+    background #ffffff
     position relative
     padding px2rem(10)
-    border-bottom px2rem(5) solid #EFEFF4
+    border-bottom px2rem(1) solid #EFEFF4
     .div_name
       margin-bottom px2rem(15)
       font-size px2rem(15)

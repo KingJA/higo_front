@@ -44,18 +44,38 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="stylus" rel="stylesheet/stylus">
+  @import "../../common/stylus/function.styl"
+.cashDetail
+  height 100%
+  background #EFEFF4
   .item_cash_detail
+    background #ffffff
     position relative
-    padding 10px
-    border-bottom 1px solid #bebebe
+    padding px2rem(10)
+    border-bottom px2rem(1) solid #EFEFF4
     .cash_type
       margin-bottom 10px
+      font-size px2rem(15)
+      color #333333
+    .date
+      font-size px2rem(12)
+      color #999999
     .div_status
       position absolute
       top 50%
-      right 20px
+      right px2rem(10)
       transform translateY(-50%)
+      .status, .money
+        display block
+        float left
       .status
-        margin-right 40px
+        margin-right px2rem(73)
+        font-size px2rem(13.5)
+        color #666666
+        line-height px2rem(17)
+      .money
+        font-size px2rem(17)
+        color #333333
+        font-weight bold
 
 </style>

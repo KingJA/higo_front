@@ -1,10 +1,15 @@
 <template>
   <div class="goCash full_screen">
-    <p class="tip_money center">可提金额</p>
-    <div class="wrap_money center">
-      <span class="money">16588</span>
-      <span class="money_yuan">元</span>
+
+    <div class="wrap_bg">
+      <p class="tip_money center">可提金额</p>
+      <div class="wrap_money center">
+        <span class="money">16588</span>
+        <span class="money_yuan">元</span>
+      </div>
     </div>
+
+
     <div class="wrap_input">
       <div class="input_money">
         <span class="symbol_rmb">¥</span>
@@ -31,8 +36,8 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="stylus" rel="stylesheet/stylus">
+  @import "../../common/stylus/function.styl"
   .goCash
-    padding-top 70px
     .tip_money
       font-size 12px
       color #fff
@@ -43,7 +48,6 @@
         font-size 30px
     .wrap_input
       position relative
-      margin-top 60px
       margin-right 5%
       margin-left 5%
       border-radius 4px
@@ -53,13 +57,18 @@
       padding-right 25px
       padding-left 25px
       .btn_out_all
+        text-align center
         display inline-block
-        border 1px solid #ff7314
-        color #ff7314
-        padding 6px
+        border 1px solid #f66b21
+        color #f66b21
         border-radius 4px
+        width px2rem(73)
+        height px2rem(28)
+        font-size px2rem(15)
+        line-height px2rem(28)
       .input
-        font-size 16px
+        font-size px2rem(15)
+        color #999999
         line-height 30px
         position absolute
         top 50%
@@ -67,21 +76,28 @@
         width 50%
       .symbol_rmb
         margin-right 10px
-        font-size 30px
+        font-size px2rem(30)
+        color #333333
     .btn_confirm_out
-      margin-top 40px
-      margin-bottom  40px
+      width px2rem(350)
+      height px2rem(50)
       background #ff7314
-      margin-right 5%
-      margin-left 5%
-      padding-top 16px
-      padding-bottom 16px
-      border-radius 50px
       color #fff
+      border-radius px2rem(50)
+      font-size px2rem(17)
+      line-height px2rem(50)
+      margin-left px2rem(12.5)
     .tip_out
       margin-right 5%
       margin-left 5%
       margin-bottom 10px
       color #999999
       font-size 15px
+
+    .wrap_bg
+      background-image  url('../../../static/img/bg_cash.png')
+      height px2rem(206.5)
+      background-size px2rem(375) px2rem(206.5)
+      padding-top px2rem(52.5)
+      box-sizing border-box
 </style>
