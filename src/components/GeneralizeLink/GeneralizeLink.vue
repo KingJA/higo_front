@@ -13,10 +13,8 @@
       <div class="wrap_invite_qcode">
         <img src="../../../static/img/invite_qcode.png" class="invite_qcode"/>
       </div>
-
       <p class="hit_download">长按扫码二维码，立即下载嬉逛APP</p>
     </div>
-
     <p class="btn_share center">分享给好友</p>
     <div class="wrap_inviteId center hidden">
       <span class="invite_text">我的邀请码: </span>
@@ -40,14 +38,16 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="stylus" rel="stylesheet/stylus">
   @import "../../common/stylus/function.styl"
+  @import "../../common/stylus/color.styl"
   .generalizeLink
     padding-top px2rem(20)
     .wrap_generalizeLink
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)
       box-sizing border-box
       width px2rem(300)
       padding px2rem(15)
       margin-left px2rem(37.5)
-      background #fff
+      background $white
       border-radius 4px
       text-align center
       .wrap_info
@@ -66,10 +66,10 @@
           .name
             margin-bottom px2rem(10)
             font-size px2rem(15)
-            color  #333333
+            color  $font_3
           .inviteId
             font-size px2rem(15)
-            color  #f8601a
+            color  $orange
 
       .wrap_invite_qcode
         margin-top px2rem(15)
@@ -79,7 +79,7 @@
           height px2rem(267.5)
       .hit_download
         font-size px2rem(10.5)
-        color  #666666
+        color  $font_6
         text-align center
   .btn_share
     line-height px2rem(44)
@@ -87,11 +87,11 @@
     font-size px2rem(15)
     margin-top px2rem(30)
     margin-left px2rem(37.5)
-    background #ff7314
+    background $orange
     width px2rem(300)
     height  px2rem(44)
     border-radius px2rem(44)
-    color #fff
+    color $white
   .wrap_inviteId
     margin-top px2rem(30)
     .invite_text,.inviteId,.btn_copy
@@ -99,14 +99,14 @@
 
     .invite_text
       font-size px2rem(15)
-      color #333333
+      color $font_3
     .inviteId
       font-size px2rem(15)
-      color  #f8601a
+      color  $orange
       margin-right px2rem(10)
     .btn_copy
-      border 1px solid #f8601a
-      color  #f8601a
+      border 1px solid $orange
+      color  $orange
       font-size px2rem(12)
       border-radius px2rem(22.5)
       height px2rem(22.5)

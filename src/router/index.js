@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Main from '@/components/Main'
-import IncomeDetail from '@/components/IncomeDetail'
+import IncomeDetail from '@/components/IncomeDetail/IncomeDetail'
 import CashDetail from '@/components/CashDetail/CashDetail'
 import GeneralizeLink from '@/components/GeneralizeLink/GeneralizeLink'
 import GoCash from '@/components/GoCash/GoCash'
-import SelledProduct from '@/components/SelledProduct'
+import SelledProduct from '@/components/SelledProduct/SelledProduct'
 import InvitedMebber from '@/components/InvitedMember/InvitedMember'
 
 Vue.use(Router)
@@ -28,7 +28,6 @@ export default new Router({
           path: '/invitedMebber',
           component: InvitedMebber
         }]
-
     },
     {
       path: '/cashDetail',

@@ -27,8 +27,9 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="stylus" rel="stylesheet/stylus">
-  @import "../common/stylus/mixin.styl"
-  @import "../common/stylus/function.styl"
+  @import "../../common/stylus/mixin.styl"
+  @import "../../common/stylus/function.styl"
+  @import "../../common/stylus/color.styl"
 .income
   height 100%
   .tabs
@@ -44,9 +45,9 @@
         padding-left 10px
         display inline-block
         line-height px2rem(50)
-        color #333333
+        color $font_3
         font-size px2rem(15)
         &.router-link-exact-active
-          color #ff7314
-          border-bottom 2px solid #ff7314
+          color $orange
+          border-bottom 2px solid $orange
 </style>

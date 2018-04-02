@@ -46,18 +46,19 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="stylus" rel="stylesheet/stylus">
   @import "../../common/stylus/function.styl"
+  @import "../../common/stylus/color.styl"
 .invitedMember
-  background #EFEFF4
+  background $divider
   height 100%
   .item_invited_member
-    background #ffffff
+    background $white
     position relative
     padding px2rem(10)
-    border-bottom px2rem(1) solid #EFEFF4
+    border-bottom px2rem(1) solid $divider
     .div_name
       margin-bottom px2rem(15)
       font-size px2rem(15)
-      color #333333
+      color $font_3
     .wrap_income
       position absolute
       top 50%
@@ -65,7 +66,7 @@
       transform translateY(-50%)
     .date
       font-size px2rem(12)
-      color #999999
+      color $font_9
     .wrap_income
       span
         line-height px2rem(14)

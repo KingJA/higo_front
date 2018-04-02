@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <div class="head">
-        <img class="wrap_icon" src="../assets/head.jpg"/>
+      <img class="wrap_icon" src="../assets/head.jpg"/>
       <p class="name">达芬奇</p>
       <p class="id">ID:12345</p>
       <div class="money">
@@ -14,8 +14,8 @@
           <p class="money_text">我的收益</p>
         </div>
       </div>
-
     </div>
+    <!--田字形导航栏-->
     <div class="navs">
       <ul class="nav_line">
         <li class="nav_item" @click="goPath(paths[0])">
@@ -37,7 +37,6 @@
             <img class="tab_icon" src="/static/img/ic_cash_record.png" width="40" height="40"/>
             <p class="tab_text">提现记录</p>
           </div>
-
         </li>
         <li class="nav_item" @click="goPath(paths[3])">
           <div class="wrap_nav_item">
@@ -47,7 +46,6 @@
         </li>
       </ul>
     </div>
-
   </div>
 </template>
 
@@ -72,15 +70,16 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="stylus" rel="stylesheet/stylus">
   @import "../common/stylus/function.styl"
+  @import "../common/stylus/color.styl"
   .main
     position relative
     text-align: center;
-    background #ECEDF1
+    background $bg_gray
     height 100%
     .head
       height px2rem(250)
-      background #F9601A
-      color: #fff
+      background $orange
+      color: $white
       .wrap_icon
         margin-top px2rem(12)
         border-radius px2rem(70)
@@ -91,19 +90,18 @@
       .id
         font-size px2rem(14)
         margin-top px2rem(10)
-
     .navs
       box-sizing border-box
       position absolute
       top px2rem(220)
       left px2rem(15)
-      background #ffffff
+      background $white
       width px2rem(345)
       margin 0 auto
       border-radius 6px
+      box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2)
       .item
         display inline-block
-
       .nav_line
         display flex
         height px2rem(125)
@@ -114,7 +112,7 @@
           border-bottom: 1px solid rgba(7, 17, 27, 0.1);
           .tab_text
             margin-top px2rem(12)
-            color #333333
+            color $font_3
             font-size px2rem(14)
           .tab_icon
             width px2rem(37)

@@ -44,21 +44,22 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="stylus" rel="stylesheet/stylus">
   @import "../../common/stylus/function.styl"
+  @import "../../common/stylus/color.styl"
   .cashDetail
     height 100%
-    background #EFEFF4
+    background $bg_gray
     .item_cash_detail
-      background #ffffff
+      background $white
       position relative
       padding px2rem(10)
-      border-bottom px2rem(1) solid #EFEFF4
+      border-bottom px2rem(1) solid $divider
       .cash_type
         margin-bottom 10px
         font-size px2rem(15)
-        color #333333
+        color $font_3
       .date
         font-size px2rem(12)
-        color #999999
+        color $font_9
       .div_status
         position absolute
         top 50%
@@ -70,10 +71,10 @@
         .status
           margin-right px2rem(73)
           font-size px2rem(13.5)
-          color #666666
+          color $font_6
           line-height px2rem(17)
         .wrap_money
-          color #333333
+          color $font_3
           overflow hidden
           .money,.unit
             display block
@@ -84,5 +85,4 @@
           .unit
             font-size px2rem(11)
             line-height px2rem(17)
-
 </style>
