@@ -11,7 +11,7 @@
 
 
     <div class="wrap_input">
-      <div class="input_money">
+      <div class="input_money hidden">
         <span class="symbol_rmb">¥</span>
         <input type="text" placeholder="请输入转出金额" class="input"/>
         <span class="float_rifht btn_out_all">全部转出</span>
@@ -39,13 +39,15 @@
   @import "../../common/stylus/function.styl"
   .goCash
     .tip_money
-      font-size 12px
+      font-size px2rem(14)
       color #fff
     .wrap_money
       color #fff
       margin-top 20px
       .money
-        font-size 30px
+        font-size px2rem(35)
+      .money_yuan
+        font-size px2rem(17)
     .wrap_input
       position relative
       margin-right 5%
@@ -56,7 +58,11 @@
       padding-bottom 40px
       padding-right 25px
       padding-left 25px
+      .btn_out_all,.input,.symbol_rmb
+        display block
+        line-height px2rem(30)
       .btn_out_all
+        float right
         text-align center
         display inline-block
         border 1px solid #f66b21
@@ -65,16 +71,13 @@
         width px2rem(73)
         height px2rem(28)
         font-size px2rem(15)
-        line-height px2rem(28)
       .input
+        float left
         font-size px2rem(15)
         color #999999
-        line-height 30px
-        position absolute
-        top 50%
-        transform translateY(-50%)
-        width 50%
+        width px2rem(150)
       .symbol_rmb
+        float left
         margin-right 10px
         font-size px2rem(30)
         color #333333
@@ -87,12 +90,14 @@
       font-size px2rem(17)
       line-height px2rem(50)
       margin-left px2rem(12.5)
+      margin-top px2rem(40)
+      margin-bottom  px2rem(40)
     .tip_out
-      margin-right 5%
-      margin-left 5%
-      margin-bottom 10px
+      width px2rem(350)
+      margin-left px2rem(12.5)
+      margin-bottom px2rem(10)
       color #999999
-      font-size 15px
+      font-size px2rem(13)
 
     .wrap_bg
       background-image  url('../../../static/img/bg_cash.png')
