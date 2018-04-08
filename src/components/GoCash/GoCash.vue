@@ -99,7 +99,7 @@
       color $font_9
       font-size px2rem(13)
     .wrap_bg
-      background-image url('../../../static/img/bg_cash.png')
+      background-image url('bg_cash.png')
       height px2rem(206.5)
       background-size px2rem(375) px2rem(206.5)
       padding-top px2rem(52.5)

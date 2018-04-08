@@ -20,13 +20,13 @@
       <ul class="nav_line">
         <li class="nav_item" @click="goPath(paths[0])">
           <div class="wrap_nav_item">
-            <img class="tab_icon" src="/static/img/ic_income.png" width="40" height="40"/>
+            <img class="tab_icon" src="../../static/img/ic_income.png" width="40" height="40"/>
             <p class="tab_text">收益明细</p>
           </div>
         </li>
         <li class="nav_item" @click="goPath(paths[1])">
           <div class="wrap_nav_item">
-            <img class="tab_icon" src="/static/img/ic_link.png" width="40" height="40"/>
+            <img class="tab_icon" src="../../static/img/ic_link.png" width="40" height="40"/>
             <p class="tab_text">推广链接</p>
           </div>
         </li>
@@ -34,13 +34,13 @@
       <ul class="nav_line">
         <li class="nav_item" @click="goPath(paths[2])">
           <div class="wrap_nav_item">
-            <img class="tab_icon" src="/static/img/ic_cash_record.png" width="40" height="40"/>
+            <img class="tab_icon" src="../../static/img/ic_cash_record.png" width="40" height="40"/>
             <p class="tab_text">提现记录</p>
           </div>
         </li>
         <li class="nav_item" @click="goPath(paths[3])">
           <div class="wrap_nav_item">
-            <img class="tab_icon" src="/static/img/ic_go_cash.png" width="40" height="40"/>
+            <img class="tab_icon" src="../../static/img/ic_go_cash.png" width="40" height="40"/>
             <p class="tab_text">我要提现</p>
           </div>
         </li>
