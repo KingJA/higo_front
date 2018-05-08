@@ -1,5 +1,6 @@
 <template>
   <div class="goCash full_screen">
+
     <div class="wrap_bg">
       <p class="tip_money center">可提金额</p>
       <div class="wrap_money center">

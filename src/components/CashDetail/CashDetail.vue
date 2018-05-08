@@ -1,11 +1,12 @@
 <template>
   <div class="cashDetail">
+    <Empty></Empty>
     <ul>
       <li class="item_cash_detail" v-for="item in items">
-        <p class="cash_type">{{item.cashType}}</p>
-        <p class="date">{{item.date}}</p>
+        <p class="cash_type">{{getTypeStr(item.type)}}</p>
+        <p class="date">{{item.created_at}}</p>
         <div class="div_status">
-          <span class="status">{{item.status}}</span>
+          <span class="status">{{getStatusStr(item.status)}}</span>
           <div class="wrap_money">
             <span class="money">{{item.money}}</span>
             <span class="unit">元</span>
@@ -18,25 +19,18 @@
 
 <script>
   import {Toast} from 'mint-ui';
+  import Empty from '@/components/Empty/Empty'
   export default {
+    components:{Empty},
     name: 'HelloWorld',
     data() {
       return {
         msg: 'Welcome to Your Vue.js App',
         isEmpty: false,
+
         items: [
-          {
-            cashType: '微信提现',
-            status: '打款中',
-            date: '2018-03-22 10:25:33',
-            money: 160,
-          },
-          {
-            cashType: '微信提现',
-            status: '打款中',
-            date: '2018-03-22 10:25:33',
-            money: 120,
-          }
+          //type 1微信提现 2支付宝提现 3银行卡提现 4现金 5其他
+          //status 0申请提现 1提现成功 2提现中 3提现失败
         ]
       }
     },
@@ -56,8 +50,19 @@
         }).catch(error => {
           console.log('error:' + error)
         });
+      },
+      getStatusStr(status) {
+        // 0申请提现 1提现成功 2提现中 3提现失败
+        let statusArr = ['申请提现', '提现成功', '提现中', '提现失败'];
+        return statusArr[status];
+      },
+      getTypeStr(status) {
+        // 1微信提现 2支付宝提现 3银行卡提现 4现金 5其他
+        let statusArr = ['','微信提现', '支付宝提现', '银行卡提现', '现金', '其他'];
+        return statusArr[status];
       }
     }
+
   }
 </script>
 
