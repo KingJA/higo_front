@@ -17,11 +17,13 @@
 </template>
 
 <script>
+  import {Toast} from 'mint-ui';
   export default {
     name: 'HelloWorld',
     data() {
       return {
         msg: 'Welcome to Your Vue.js App',
+        isEmpty: false,
         items: [
           {
             cashType: '微信提现',
@@ -41,13 +43,16 @@
     created() {
       this.getCashRecords();
     },
-    methods:{
+    methods: {
       getCashRecords() {
         let token = localStorage.getItem('token');
         console.log('token:' + token);
         this.$http.get("/v1/cps/withdrawlist?token=" + token).then(res => {
           this.items = res.data.data;
-          console.log('length'+this.item.length);
+          if (this.items.length === 0) {
+            this.isEmpty = true;
+            Toast('暂无提现记录');
+          }
         }).catch(error => {
           console.log('error:' + error)
         });
@@ -91,7 +96,7 @@
         .wrap_money
           color $font_3
           overflow hidden
-          .money,.unit
+          .money, .unit
             display block
             float left
             font-weight bold
