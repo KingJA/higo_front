@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Main from '@/components/Main'
+import Login from '@/components/login/Login'
 import IncomeDetail from '@/components/IncomeDetail/IncomeDetail'
 import CashDetail from '@/components/CashDetail/CashDetail'
 import GeneralizeLink from '@/components/GeneralizeLink/GeneralizeLink'
@@ -11,9 +12,15 @@ import InvitedMebber from '@/components/InvitedMember/InvitedMember'
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
+      component: Login
+    },
+    {
+      name: 'Main',
+      path: '/main',
       component: Main
     },
     {

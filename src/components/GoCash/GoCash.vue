@@ -3,7 +3,7 @@
     <div class="wrap_bg">
       <p class="tip_money center">可提金额</p>
       <div class="wrap_money center">
-        <span class="money">16588</span>
+        <span class="money">{{balance}}</span>
         <span class="money_yuan">元</span>
       </div>
     </div>
@@ -11,24 +11,60 @@
     <div class="wrap_input">
       <div class="input_money hidden">
         <span class="symbol_rmb">¥</span>
-        <input type="text" placeholder="请输入转出金额" class="input"/>
-        <span class="float_rifht btn_out_all">全部转出</span>
+        <input type="text" placeholder="请输入转出金额" class="input" v-model="money"/>
+        <span class="float_rifht btn_out_all" @click="getAll">全部转出</span>
       </div>
     </div>
-    <p class="btn_confirm_out center">确定转出</p>
+    <p class="btn_confirm_out center" @click="getMoney">确定转出</p>
     <p class="tip_out">1.预计到账时间：48小时内，节假日顺延</p>
     <p class="tip_out">2.每个账号免费体现额度为500元，超出部分将收取3%的服务费</p>
   </div>
 </template>
 
 <script>
+  import {getToken} from '@/common/js/utils.js'
+  import {Toast} from 'mint-ui';
+
   export default {
     name: 'HelloWorld',
     data() {
       return {
-        msg: 'Welcome to Your Vue.js App'
+        msg: 'Welcome to Your Vue.js App',
+        balance: '',
+        money: ''
+      }
+    },
+    created() {
+      console.log('token:' + getToken())
+      this.getBalance();
+    },
+    methods: {
+      getBalance() {
+        this.$http.post("/v1/cps/wallet", {token: getToken()}).then(res => {
+          console.log('res:' + res.data.data);
+          this.balance = res.data.data;
+        }).catch(error => {
+          console.log('error:' + error)
+        });
+      },
+      getMoney() {
+        if (!this.money) {
+          Toast("请输入提现金额");
+          return
+        }
+        this.$http.post('/v1/cps/withdraw', {token: getToken(), money: this.money}).then(res => {
+          Toast('提现成功');
+          this.balance=this.balance-this.money;
+        }).catch(error => {
+
+        })
+      },
+      getAll() {
+        this.money = this.balance;
       }
     }
+
+
   }
 </script>
 

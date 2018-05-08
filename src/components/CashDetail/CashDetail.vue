@@ -37,6 +37,21 @@
           }
         ]
       }
+    },
+    created() {
+      this.getCashRecords();
+    },
+    methods:{
+      getCashRecords() {
+        let token = localStorage.getItem('token');
+        console.log('token:' + token);
+        this.$http.get("/v1/cps/withdrawlist?token=" + token).then(res => {
+          this.items = res.data.data;
+          console.log('length'+this.item.length);
+        }).catch(error => {
+          console.log('error:' + error)
+        });
+      }
     }
   }
 </script>

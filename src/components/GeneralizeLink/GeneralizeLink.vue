@@ -2,10 +2,10 @@
   <div class="generalizeLink full_screen">
     <div class="wrap_generalizeLink">
       <div class="wrap_info">
-        <img src="../../../static/img/jiesen.jpg" width="60" height="60" class="head_generalize_line"/>
+        <img src="../../assets/logo.png" width="60" height="60" class="head_generalize_line" />
         <div class="user_info">
-          <p class="name">Jasen</p>
-          <p class="inviteId">邀请码:FD1254</p>
+          <p class="name">{{getNickname}}</p>
+          <p class="inviteId">邀请码:--</p>
         </div>
 
 
@@ -18,7 +18,7 @@
     <p class="btn_share center">分享给好友</p>
     <div class="wrap_inviteId center hidden">
       <span class="invite_text">我的邀请码: </span>
-      <span class="inviteId">DFSDF125</span>
+      <span class="inviteId">--</span>
       <span class="btn_copy">复制邀请码</span>
     </div>
   </div>
@@ -29,8 +29,33 @@
     name: 'HelloWorld',
     data() {
       return {
-        msg: 'Welcome to Your Vue.js App'
+        msg: 'Welcome to Your Vue.js App',
+        nickname: ''
       }
+    },
+    created() {
+      this.getLink();
+    },
+    computed:{
+      getNickname() {
+        if (localStorage.getItem('nickname')) {
+          return localStorage.getItem('nickname');
+        } else {
+          return '';
+        }
+      }
+    },
+    methods: {
+      getLink() {
+        let token = localStorage.getItem('token');
+        console.log('token:' + token);
+        this.$http.get("/v1/cps/link?token=" + token).then(res => {
+          this.nickname = res.data.data.nickname;
+        }).catch(error => {
+          console.log('error:' + error)
+        });
+      }
+
     }
   }
 </script>
@@ -66,10 +91,10 @@
           .name
             margin-bottom px2rem(10)
             font-size px2rem(15)
-            color  $font_3
+            color $font_3
           .inviteId
             font-size px2rem(15)
-            color  $orange
+            color $orange
 
       .wrap_invite_qcode
         margin-top px2rem(15)
@@ -79,8 +104,9 @@
           height px2rem(267.5)
       .hit_download
         font-size px2rem(10.5)
-        color  $font_6
+        color $font_6
         text-align center
+
   .btn_share
     line-height px2rem(44)
     text-align center
@@ -89,12 +115,13 @@
     margin-left px2rem(37.5)
     background $orange
     width px2rem(300)
-    height  px2rem(44)
+    height px2rem(44)
     border-radius px2rem(44)
     color $white
+
   .wrap_inviteId
     margin-top px2rem(30)
-    .invite_text,.inviteId,.btn_copy
+    .invite_text, .inviteId, .btn_copy
       display inline-block
 
     .invite_text
@@ -102,11 +129,11 @@
       color $font_3
     .inviteId
       font-size px2rem(15)
-      color  $orange
+      color $orange
       margin-right px2rem(10)
     .btn_copy
       border 1px solid $orange
-      color  $orange
+      color $orange
       font-size px2rem(12)
       border-radius px2rem(22.5)
       height px2rem(22.5)

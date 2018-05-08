@@ -10,11 +10,17 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      '/v1/*': {
+        target: 'http://traval.dev.singlook.com:8002',
+        // pathRewrite: {'^/v1':''},
+        changeOrigin: true
+      }
+    },
 
     // Various Dev Server settings
-    host: 'localhost', // can be overwritten by process.env.HOST
-    port: 8077, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
+    host: '10.1.3.186', // can be overwritten by process.env.HOST
+    port: 8088, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
     autoOpenBrowser: false,
     errorOverlay: true,
     notifyOnErrors: true,

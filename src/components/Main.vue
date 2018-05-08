@@ -1,17 +1,17 @@
 <template>
   <div class="main">
     <div class="head">
-      <img class="wrap_icon" src="../assets/head.jpg"/>
-      <p class="name">达芬奇</p>
-      <p class="id">ID:12345</p>
+      <img class="wrap_icon" src="../assets/logo.png"/>
+      <p class="name">{{user.nickname}}</p>
+      <p class="id">ID:{{user.id}}</p>
       <div class="money">
         <div class="money_item">
-          <h1 class="money_num">128800</h1>
+          <h1 class="money_num">{{user.money}}</h1>
           <p class="money_text">我的收益</p>
         </div>
         <div class="money_item">
-          <h1 class="money_num">128800</h1>
-          <p class="money_text">我的收益</p>
+          <h1 class="money_num">{{user.balance}}</h1>
+          <p class="money_text">我的余额</p>
         </div>
       </div>
     </div>
@@ -61,8 +61,20 @@
     data() {
       return {
         msg: 'Welcome to Your Vue.js App',
-        paths: ['/incomeDetail', '/generalizeLink', '/cashDetail', '/goCash',]
+        paths: ['/incomeDetail', '/generalizeLink', '/cashDetail', '/goCash',],
+        user:{}
       }
+    },
+    created() {
+     let token= localStorage.getItem('token');
+     console.log('token:'+token);
+      this.$http.get("/v1/cps/cpsuser?token="+token).then(res=>{
+        console.log('res:'+res.data.data);
+        localStorage.setItem('nickname',res.data.data.nickname)
+        this.user=res.data.data;
+      }).catch(error=>{
+        console.log('error:'+error)
+      });
     }
   }
 </script>
