@@ -4,9 +4,9 @@
       <li class="item_selled_product" v-for="item in data.order">
         <div>
           <div class="head_selled_product  border-1px">
-            <span class="name">{{item.name}}</span>
-            <span class="phone">{{item.phone}}</span>
-            <span class="date">{{item.date}}</span>
+            <span class="name">{{item.user.nickname}}</span>
+            <span class="phone">{{item.user.mobile}}</span>
+            <span class="date">{{item.user.created_at}}</span>
           </div>
           <div class="content_selled_product">
             <h3 class="title">{{item.product_name}}</h3>
@@ -14,7 +14,7 @@
             <p class="count">数量:¥{{item.num}}</p>
             <div class="wrap_income">
               <span class="float_left">返现:  ¥</span>
-              <span class="money float_left">{{item.money}}</span>
+              <span class="money float_left">{{item.earnings}}</span>
             </div>
           </div>
         </div>
