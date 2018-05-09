@@ -2,14 +2,14 @@
   <div class="income">
     <div class="tabs border-1px">
       <div class="tab_item">
-        <router-link to="/selledProduct">已卖产品(168)</router-link>
+        <router-link to="/selledProduct">已卖产品({{OrderCount}})</router-link>
       </div>
       <div class="tab_item">
-        <router-link to="/invitedMebber">邀请会员(256)</router-link>
+        <router-link to="/invitedMebber">邀请会员({{userCount}})</router-link>
       </div>
     </div>
     <keep-alive>
-      <router-view></router-view>
+      <router-view  :data="data"></router-view>
     </keep-alive>
   </div>
 </template>
@@ -19,8 +19,23 @@
     name: 'HelloWorld',
     data() {
       return {
-        msg: 'Welcome to Your Vue.js App'
+        msg: 'Welcome to Your Vue.js App',
+        userCount:0,
+        OrderCount:0,
+        data:{}
       }
+    },
+    created() {
+      let token = localStorage.getItem('token');
+      console.log('token:' + token);
+      this.$http.get("/v1/cps/list?token=" + token).then(res => {
+        console.log(res.data.data);
+        this.userCount=res.data.data.usercount;
+        this.OrderCount=res.data.data.ordercount;
+        this.data=res.data.data;
+      }).catch(error => {
+        console.log('error:' + error)
+      });
     }
   }
 </script>

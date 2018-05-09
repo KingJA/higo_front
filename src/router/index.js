@@ -27,7 +27,8 @@ export default new Router({
       path: '/incomeDetail',
       component: IncomeDetail,
       redirect: '/selledProduct',
-      children: [{
+      children: [
+        {
         path: '/selledProduct',
         component: SelledProduct
       },

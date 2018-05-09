@@ -1,7 +1,7 @@
 <template>
   <div class="selledProduct">
     <ul>
-      <li class="item_selled_product" v-for="item in items">
+      <li class="item_selled_product" v-for="item in data.order">
         <div>
           <div class="head_selled_product  border-1px">
             <span class="name">{{item.name}}</span>
@@ -9,9 +9,9 @@
             <span class="date">{{item.date}}</span>
           </div>
           <div class="content_selled_product">
-            <h3 class="title">{{item.title}}</h3>
-            <p class="orderId">订单号:{{item.orderId}}</p>
-            <p class="count">数量:¥{{item.count}}</p>
+            <h3 class="title">{{item.product_name}}</h3>
+            <p class="orderId">订单号:{{item.order_id}}</p>
+            <p class="count">数量:¥{{item.num}}</p>
             <div class="wrap_income">
               <span class="float_left">返现:  ¥</span>
               <span class="money float_left">{{item.money}}</span>
@@ -50,6 +50,9 @@
           }
         ]
       }
+    },
+    props: {
+      data: {}
     }
   }
 </script>

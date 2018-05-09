@@ -1,16 +1,16 @@
 <template>
   <div class="invitedMember">
     <ul>
-      <li class="item_invited_member" v-for="item in items">
+      <li class="item_invited_member" v-for="item in data.user">
 
-        <p class="div_name">{{item.name}}{{item.phone}} </p>
+        <p class="div_name">{{item.nickname}}  {{item.mobile}} </p>
 
-        <p class="date">成为会员时间:{{item.date}}</p>
+        <p class="date">成为会员时间:{{item.created_at}}</p>
 
 
-        <div class="wrap_income">
+        <div class="wrap_income" v-if="false">
           <span class="float_left">收益:  ¥</span>
-          <span class="money float_left">{{item.money}}</span>
+          <span class="money float_left">0</span>
         </div>
 
       </li>
@@ -39,6 +39,9 @@
           }
         ]
       }
+    },
+    props: {
+      data: {}
     }
   }
 </script>

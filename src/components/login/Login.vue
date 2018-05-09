@@ -1,7 +1,6 @@
 <template>
   <div class="login">
     <input type="text" placeholder="请输入手机号" class="input_mobile" v-model="mobile"/>
-
     <div class="wrap_code">
       <input type="text" placeholder="请输入验证码" class="input_code" v-model="code"/>
 
